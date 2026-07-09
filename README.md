@@ -1,4 +1,4 @@
-# SCT-ML-task4
+## SCT-ML-Task4
 # ✋ Hand Gesture Recognition using MediaPipe and CNN
 
 ## 📌 Overview
@@ -23,11 +23,9 @@ To develop a machine learning model that accurately recognizes and classifies va
 ---
 
 ## 📂 Dataset
-The project uses the **Hand Gesture Dataset** 
-link : https://www.kaggle.com/datasets/gti-upm/leapgestrecog
+The project uses the **Hand Gesture Dataset** provided by SkillCraft Technology.
 
 ---
-
 ## ⚙️ Features
 - Image preprocessing and normalization
 - Hand landmark detection using MediaPipe
@@ -52,7 +50,8 @@ link : https://www.kaggle.com/datasets/gti-upm/leapgestrecog
 ## 📊 Results
 The trained model successfully classifies different hand gestures with high accuracy. Performance is evaluated using classification accuracy and a confusion matrix, demonstrating reliable gesture recognition.
 
-```
+---
+
 ## 📷 Output
 - Training Accuracy Graph
 - Confusion Matrix
@@ -60,7 +59,7 @@ The trained model successfully classifies different hand gestures with high accu
 
 ---
 
-##  Conclusion
+## ✅ Conclusion
 This project demonstrates the successful implementation of a Hand Gesture Recognition system using MediaPipe and a Convolutional Neural Network. By combining robust hand landmark detection with deep learning-based classification, the model accurately recognizes various hand gestures and supports real-time interaction. The project highlights the practical application of computer vision and machine learning in developing intuitive, contactless control systems for modern human-computer interaction.
 
 ---
