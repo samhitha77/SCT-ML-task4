@@ -23,8 +23,9 @@ To develop a machine learning model that accurately recognizes and classifies va
 ---
 
 ## 📂 Dataset
-The project uses the **Hand Gesture Dataset**
-datset linl : https://www.kaggle.com/datasets/gti-upm/leapgestrecog
+The project uses the **Hand Gesture Dataset**.
+
+datset link : https://www.kaggle.com/datasets/gti-upm/leapgestrecog
 
 ---
 ## ⚙️ Features
