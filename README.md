@@ -1,67 +1,211 @@
-## SCT-ML-Task4
-# ✋ Hand Gesture Recognition using MediaPipe and CNN
+# ✋ Rock Paper Scissors Gesture Recognition using Machine Learning
 
-## 📌 Overview
-This project implements a Hand Gesture Recognition system capable of identifying and classifying different hand gestures from images or video streams. The model enables intuitive human-computer interaction by recognizing hand movements in real time. MediaPipe is used for accurate hand landmark detection, while a Convolutional Neural Network (CNN) performs gesture classification.
+A real-time **Rock, Paper, Scissors hand gesture recognition system** built using **Python**, **OpenCV**, **HOG (Histogram of Oriented Gradients)**, and a **Support Vector Machine (SVM)** classifier.
+
+The application detects hand gestures from a webcam feed and classifies them into one of the following classes:
+
+- ✊ Rock
+- ✋ Paper
+- ✌️ Scissors
 
 ---
 
-## 🎯 Objective
-To develop a machine learning model that accurately recognizes and classifies various hand gestures, enabling gesture-based interaction for real-world applications.
+## 📌 Features
+
+- Real-time webcam prediction
+- Hand Region of Interest (ROI)
+- Skin color segmentation using HSV
+- HOG feature extraction
+- SVM classifier for gesture recognition
+- Live confidence score
+- Automatic "No Hand Detected" when no hand is present
+- Lightweight and fast inference
 
 ---
 
-## 🛠️ Technologies Used
+## 📂 Project Structure
+
+```
+SCT_ML_4/
+│
+├── dataset/
+│   ├── rock/
+│   ├── paper/
+│   └── scissors/
+│
+├── train_model.py
+├── predict_webcam.py
+├── gesture_model.pkl
+├── scaler.pkl
+├── gesture_names.pkl
+├── README.md
+```
+
+---
+
+## 🛠 Technologies Used
+
 - Python
 - OpenCV
-- MediaPipe
-- TensorFlow / Keras
 - NumPy
-- Matplotlib
-- Scikit-learn
+- Scikit-Learn
+- Scikit-Image
+- Joblib
+- tqdm
 
 ---
 
-## 📂 Dataset
-The project uses the **Hand Gesture Dataset**.
- link : https://www.kaggle.com/datasets/gti-upm/leapgestrecog
+## 📊 Dataset
 
----
-## ⚙️ Features
-- Image preprocessing and normalization
-- Hand landmark detection using MediaPipe
-- CNN-based gesture classification
-- Real-time gesture prediction
-- Model evaluation using accuracy and confusion matrix
-- Saved trained model for future predictions
+Dataset used:
 
----
+**Rock Paper Scissors Dataset**
 
-## 🚀 Workflow
-1. Load the hand gesture dataset.
-2. Preprocess and normalize the images.
-3. Detect hand landmarks using MediaPipe.
-4. Train the CNN model.
-5. Evaluate model performance.
-6. Save the trained model.
-7. Predict gestures from new images or webcam input.
+https://www.kaggle.com/datasets/drgfreeman/rockpaperscissors
+
+Dataset contains approximately:
+
+- 712 Paper images
+- 726 Rock images
+- 750 Scissors images
+
+Total Images: **2188**
 
 ---
 
-## 📊 Results
-The trained model successfully classifies different hand gestures with high accuracy. Performance is evaluated using classification accuracy and a confusion matrix, demonstrating reliable gesture recognition.
+## ⚙️ Machine Learning Pipeline
+
+1. Load images
+2. Resize images to 128×128
+3. Convert to grayscale
+4. Extract HOG features
+5. Normalize features using StandardScaler
+6. Train an SVM classifier
+7. Save trained model using Joblib
+8. Perform real-time predictions from webcam
 
 ---
 
-## 📷 Output
-- Training Accuracy Graph
-- Confusion Matrix
-- Gesture Prediction Results
+## 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/yourusername/rock-paper-scissors-gesture-recognition.git
+```
+
+Move into the project directory
+
+```bash
+cd rock-paper-scissors-gesture-recognition
+```
+
+Install dependencies
+
+```bash
+pip install opencv-python
+pip install scikit-learn
+pip install scikit-image
+pip install numpy
+pip install tqdm
+pip install joblib
+```
 
 ---
 
-## ✅ Conclusion
-This project demonstrates the successful implementation of a Hand Gesture Recognition system using MediaPipe and a Convolutional Neural Network. By combining robust hand landmark detection with deep learning-based classification, the model accurately recognizes various hand gestures and supports real-time interaction. The project highlights the practical application of computer vision and machine learning in developing intuitive, contactless control systems for modern human-computer interaction.
+## ▶️ Train the Model
+
+```bash
+python train_model.py
+```
+
+After training, the following files will be generated:
+
+```
+gesture_model.pkl
+scaler.pkl
+gesture_names.pkl
+```
 
 ---
 
+## ▶️ Run the Application
+
+```bash
+python predict_webcam.py
+```
+
+Place your hand inside the green box.
+
+The application will predict:
+
+- Rock
+- Paper
+- Scissors
+
+along with a confidence score.
+
+Press **Q** to exit.
+
+---
+
+## 📈 Model Performance
+
+Dataset Size: **2188 images**
+
+Training Accuracy:
+
+```
+98.63%
+```
+
+Classification Report:
+
+| Class | Precision | Recall | F1-Score |
+|--------|-----------|----------|-----------|
+| Paper | 0.99 | 0.98 | 0.98 |
+| Rock | 0.99 | 0.99 | 0.99 |
+| Scissors | 0.99 | 0.99 | 0.99 |
+
+Overall Accuracy:
+
+**98.63%**
+
+---
+
+## Generate the Model
+
+The trained model (`gesture_model.pkl`) is not included in this repository because it exceeds GitHub's recommended file size.
+
+After downloading the dataset, run:
+
+```bash
+python train_model.py
+
+
+## 💡 Future Improvements
+
+- MediaPipe Hand Landmark Integration
+- Deep Learning using CNN
+- Background-independent hand segmentation
+- Gesture smoothing using temporal filtering
+- Support for custom gestures
+- Deployment as a desktop application
+
+---
+
+## 👨‍💻 Author
+
+**Varshith Raju**
+
+Machine Learning & AI Enthusiast
+
+LinkedIn: *(Add your LinkedIn URL here)*
+
+GitHub: *(Add your GitHub URL here)*
+
+---
+
+## 📄 License
+
+This project is developed for educational and internship purposes.
